@@ -23,4 +23,30 @@ function afficherDonnees(donnees){
         tableBody.appendChild(row);
     });
 }
+   
+    function afficherMoyenne(tab) {
+        const totalNotes = tab.reduce((acc, personne) => acc + personne.note, 0);
+        const moyenne = totalNotes / tab.length;
+    
+        const moyenneElement = document.querySelector(".moyenne");
+        moyenneElement.textContent = ` ${moyenne.toFixed(2)}`;
+    }
+
+    function afficherMeilleureNote(tab) {
+        const meilleureNote = Math.max(...tab.map(personne => personne.note));
+        
+        const meilleursEleves = tab.filter(personne => personne.note === meilleureNote);
+        
+        const meilleureNoteElement = document.querySelector(".meilleureEleve");
+        
+        const texte = meilleursEleves.map(personne => `${personne.firstname} ${personne.lastname}
+             a eu la meilleure note de ${personne.note}`).join('<br>');
+        
+        meilleureNoteElement.innerHTML = texte;
+    }
+
     afficherDonnees(tab1);
+    afficherMeilleureNote(tab1);
+    afficherMoyenne(tab1);
+    
+  

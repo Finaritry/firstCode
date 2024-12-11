@@ -28,3 +28,13 @@ th{
 tr:nth-child(even){
     background-color: #f9f9f9;
 }
+#moyenne {
+    width: 80%;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.meilleureEleve {
+    font-size: 18px;
+    padding: 10px;
+    line-height: 1.5;
+}
